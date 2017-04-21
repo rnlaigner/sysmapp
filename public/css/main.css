@@ -1,0 +1,57 @@
+.site-header-bg {
+	
+	background: url("/img/IC-Background-Topo.png");
+	
+	/*
+	width: 100%;
+	
+	
+	
+	
+	z-index: 1;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-right: 200px;
+	padding-left: 0;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: 'Roboto';
+	*/
+}
+
+.navbar .navbar-brand {
+	padding: 9px 15px;
+}
+
+.navbar.menu {
+	
+	background: url("/img/grey-background.jpg");
+	
+	/*background-color: #0B6951;*/
+}
+
+@media all
+{
+	.container {
+		width: 100%;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.navbar {
+		border-radius: 0;
+	}
+}
+
+/* centered columns styles */
+.row-centered {
+	text-align:center;
+}
+
+.col-centered {
+	display:inline-block;
+	float:none;
+	/* reset the text-align */
+	text-align:left;
+	/* inline-block space fix */
+	margin-right:-4px;
+}

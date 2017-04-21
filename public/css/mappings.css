@@ -1,0 +1,13 @@
+#wrapper {
+	margin-top: -20px;
+	
+}
+
+#sidebar-wrapper{
+	/*DOES NOT WORK*/
+	/*position: fixed;*/
+}
+
+#page-content-wrapper{
+	
+}
