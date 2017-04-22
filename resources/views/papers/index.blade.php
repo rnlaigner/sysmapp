@@ -6,7 +6,7 @@
 	<h1>List of Papers</h1>
 	<thead>
         <tr>
-            <td>Name</td>
+            <td>Title</td>
             <td>Type of primary study</td>
             <td>Technique</td>
             <td>Development phase</td>
@@ -15,6 +15,10 @@
 			<td>Environment</td>
 			<td>Research Type</td>
 			<td>Reference</td>
+			
+			<td>Search Type</td>
+			<td>Link</td>
+			
 			<td>Actions</td>
         </tr>
     </thead>
@@ -22,14 +26,16 @@
 		@foreach ($papers as $paper)
 		<tr>
 			<td>{{$paper->name}}</td>
-			<td>{{$paper->paperType}}</td>
+			<td>{{$paper->paper_type}}</td>
 			<td>{{$paper->technique}}</td>
 			<td>{{$paper->phase}}</td>
 			<td>{{$paper->objective}}</td>
 			<td>{{$paper->origin}}</td>
 			<td>{{$paper->environment}}</td>
-			<td>{{$paper->researchType}}</td>
+			<td>{{$paper->research_type}}</td>
 			<td>{{$paper->reference}}</td>
+			<td>{{$paper->search_type}}</td>
+			<td>{{$paper->link}}</td>
 			
 			<td>
 				<!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->

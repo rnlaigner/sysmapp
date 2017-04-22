@@ -59,14 +59,12 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li>
-							<a href="#">About</a>
-						</li>
-						<li>
 							<a href="{{ url('/app/mappings') }}">Mappings</a>
 						</li>
 						<li>
-							<a href="#">Contact</a>
+							<a href="{{ url('/app/papers') }}">Papers</a>
 						</li>
+						
 						<li class="dropdown">
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 						  <ul class="dropdown-menu">
@@ -79,6 +77,11 @@
 							<li><a href="#">One more separated link</a></li>
 						  </ul>
 						</li>
+						
+						<li>
+							<a href="#">About</a>
+						</li>
+						
 					</ul>
 					
 					<!-- Right Side Of Navbar -->
