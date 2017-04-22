@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ModifyColumnPhaseStringToForeignKeyPapersTable extends Migration
+class AddSearchTypeAndLinkToPapersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,10 @@ class ModifyColumnPhaseStringToForeignKeyPapersTable extends Migration
      */
     public function up()
     {
-        //NOT NECESSARY. JUST SAVING PHASE AS STRING
+        Schema::table('papers', function (Blueprint $table) {
+			$table->string('search_type');
+			$table->string('link');
+		});
     }
 
     /**
@@ -23,6 +26,9 @@ class ModifyColumnPhaseStringToForeignKeyPapersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('papers', function($table) {
+			$table->dropColumn('search_type');
+			$table->dropColumn('link');
+		});
     }
 }
