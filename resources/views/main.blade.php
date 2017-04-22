@@ -62,7 +62,7 @@
 							<a href="#">About</a>
 						</li>
 						<li>
-							<a href="{{ url('/mappings') }}">Mappings</a>
+							<a href="{{ url('/app/mappings') }}">Mappings</a>
 						</li>
 						<li>
 							<a href="#">Contact</a>

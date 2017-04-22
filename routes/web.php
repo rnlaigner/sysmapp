@@ -13,14 +13,22 @@
 
 Auth::routes();
 
+/*
 Route::get('/', function () {
-	return view('auth/login');
+	return view('/main');
 });
 
-Route::get('/home', 'HomeController@index');
+Route::get('/app', 'AppController@index');
+*/
+
+/* The current accepted answer matches everything not just / OR /app */
+Route::get('/{name}', array(
+     'as' => 'main', 
+     'uses' => 'AppController@index')
+    )->where('name', '(app)?');
 
 
-Route::get('/mappings', function () {
+Route::get('/app/mappings', function () {
 	return view('mappings');
 });
 
