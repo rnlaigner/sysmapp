@@ -40,16 +40,16 @@
 			<td>
 				<!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
                 <!-- we will add this later since its a little more complicated than the other two buttons -->
-                {{ Form::open(array('url' => 'papers/' . $paper->id, 'class' => 'pull-right')) }}
+                {{ Form::open(array('url' => 'app/papers/' . $paper->id, 'class' => 'pull-right')) }}
                     {{ Form::hidden('_method', 'DELETE') }}
                     {{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
                 {{ Form::close() }}
 			
 				<!-- show the nerd (uses the show method found at GET /nerds/{id} -->
-                <a class="btn btn-small btn-success" href="{{ URL::to('papers/' . $paper->id) }}">Show</a>
+                <a class="btn btn-small btn-success" href="{{ URL::to('app/papers/' . $paper->id) }}">Show</a>
 				
                 <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
-                <a class="btn btn-small btn-info" href="{{ URL::to('papers/' . $paper->id . '/edit') }}">Edit</a>
+                <a class="btn btn-small btn-info" href="{{ URL::to('app/papers/' . $paper->id . '/edit') }}">Edit</a>
 			</td>
 			
 		</tr>
@@ -58,6 +58,8 @@
 </table>
 </div>
 
+<div class="container">
 {{ $papers->links() }}
+</div>
 
 @stop

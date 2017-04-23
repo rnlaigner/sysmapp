@@ -75,8 +75,8 @@ class PaperController extends Controller
 			'technique'  => 'required',
 			'objective'  => 'required',
 			'phase'		 => 'required',
-            'paperType' => 'required',
-			'researchType' => 'required',
+            'paper_type' => 'required',
+			'research_type' => 'required',
 			'origin' => 'required',
 			'reference' => 'required',
 			'environment' => 'required'
@@ -85,7 +85,7 @@ class PaperController extends Controller
 		
 		// process the login
         if ($validator->fails()) {
-            return Redirect::to('papers/create')
+            return Redirect::to('app/papers/create')
                 ->withErrors($validator)
                 ->withInput(Input::except('password'));
         } else {
@@ -95,16 +95,16 @@ class PaperController extends Controller
 			$paper->technique  = Input::get('technique');
 			$paper->objective  = Input::get('objective');
 			$paper->phase      = Input::get('phase');
-			$paper->researchType = Input::get('researchType');
+			$paper->research_type = Input::get('research_type');
 			$paper->origin     = Input::get('origin');
 			$paper->environment = Input::get('environment');
-            $paper->paperType  = Input::get('paperType');
+            $paper->paper_type  = Input::get('paper_type');
 			$paper->reference  = Input::get('reference');
             $paper->save();
 
             // redirect
             Session::flash('message', 'Successfully created paper!');
-            return Redirect::to('papers');
+            return Redirect::to('app/papers');
         }
     }
 	
@@ -144,8 +144,8 @@ class PaperController extends Controller
 			'technique'  => 'required',
 			'objective'  => 'required',
 			'phase'		 => 'required',
-            'paperType' => 'required',
-			'researchType' => 'required',
+            'paper_type' => 'required',
+			'research_type' => 'required',
 			'origin' => 'required',
 			'reference' => 'required',
 			'environment' => 'required'
@@ -157,7 +157,8 @@ class PaperController extends Controller
         if ($validator->fails()) {
 			return redirect()->action(
 				'PaperController@edit', ['id' => $id]
-			);
+			)->withErrors($validator)
+             ->withInput(Input::except('password'));;
         } else {
 			// store
             $paper = Paper::find($id);
@@ -166,16 +167,16 @@ class PaperController extends Controller
 			$paper->technique  = Input::get('technique');
 			$paper->objective  = Input::get('objective');
 			$paper->phase      = Input::get('phase');
-			$paper->researchType = Input::get('researchType');
+			$paper->research_type = Input::get('research_type');
 			$paper->origin     = Input::get('origin');
 			$paper->environment = Input::get('environment');
-            $paper->paperType  = Input::get('paperType');
+            $paper->paper_type  = Input::get('paper_type');
 			$paper->reference  = Input::get('reference');
             $paper->save();
 
             // redirect
             Session::flash('message', 'Successfully updated paper!');
-            return Redirect::to('papers');
+            return Redirect::to('app/papers');
         }
     }
 
@@ -191,9 +192,12 @@ class PaperController extends Controller
         $paper = Paper::find($id);
         $paper->delete();
 
+		//TODO should redirect to correct page (pagination)
+		//receive another parameter
+		
         // redirect
         Session::flash('message', 'Successfully deleted the paper!');
-        return Redirect::to('papers');
+        return Redirect::to('app/papers');
     }
 	
 	

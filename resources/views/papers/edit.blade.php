@@ -45,10 +45,10 @@
 	</div>
 
 	<div class="form-group">
-	  {{ Form::label('paperType', 'Type of primary study') }}
-	  <select class="form-control" name="paperType">
+	  {{ Form::label('paper_type', 'Type of primary study') }}
+	  <select class="form-control" name="paper_type">
 		@foreach($types as $type)
-			@if($type->name == $paper->paperType){
+			@if($type->name == $paper->paper_type){
 				<option value="{{$type->name}}" selected>{{$type->name}}</option>
 			} @else {
 				<option value="{{$type->name}}">{{$type->name}}</option>
@@ -59,10 +59,11 @@
 	</div>
 	
 	<div class="form-group">
-	  {{ Form::label('researchType', 'Research type') }}
-	  <select class="form-control" name="researchType">
+	  {{ Form::label('research_type', 'Research type') }}
+	  <select class="form-control" name="research_type">
+	    <option value="null">Select a type</option>
 		@foreach($research as $res)
-			@if($res->name == $paper->researchType){
+			@if($res->name == $paper->research_type){
 				<option value="{{$res->name}}" selected>{{$res->name}}</option>
 			} @else {
 				<option value="{{$res->name}}">{{$res->name}}</option>

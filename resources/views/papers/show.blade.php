@@ -5,11 +5,11 @@
 
 	<nav class="navbar navbar-inverse">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="{{ URL::to('papers') }}">Paper Alert</a>
+			<a class="navbar-brand" href="{{ URL::to('app/papers') }}">Paper Alert</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="{{ URL::to('papers') }}">View All Papers</a></li>
-			<li><a href="{{ URL::to('papers/create') }}">Register a Paper</a>
+			<li><a href="{{ URL::to('app/papers') }}">View All Papers</a></li>
+			<li><a href="{{ URL::to('app/papers/create') }}">Register a Paper</a>
 		</ul>
 	</nav> 
 	

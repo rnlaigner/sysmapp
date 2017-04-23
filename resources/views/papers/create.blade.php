@@ -8,7 +8,7 @@
 <!-- if there are creation errors, they will show here -->
 {{ Html::ul($errors->all()) }}
 
-{{ Form::open(array('url' => 'papers')) }}
+{{ Form::open(array('url' => 'app/papers')) }}
 
     <div class="form-group">
         {{ Form::label('name', 'Name') }}
@@ -58,8 +58,8 @@
 	</div>
 
 	<div class="form-group">
-	  {{ Form::label('paperType', 'Type of primary study') }}
-	  <select class="form-control" name="paperType">
+	  {{ Form::label('paper_type', 'Type of primary study') }}
+	  <select class="form-control" name="paper_type">
 		@foreach($types as $type)
 		  <option value="{{$type->name}}">{{$type->name}}</option>
 		@endforeach
@@ -67,8 +67,8 @@
 	</div>
 	
 	<div class="form-group">
-	  {{ Form::label('researchType', 'Research type') }}
-	  <select class="form-control" name="researchType">
+	  {{ Form::label('research_type', 'Research type') }}
+	  <select class="form-control" name="research_type">
 		@foreach($research as $res)
 		  <option value="{{$res->name}}">{{$res->name}}</option>
 		@endforeach
